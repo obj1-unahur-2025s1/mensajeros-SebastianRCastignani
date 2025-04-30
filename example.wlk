@@ -1,7 +1,24 @@
+object paquete {
+  var pago = true
+  var destino = puenteDeBrooklyn
+  method puedeSerEntregado(mensajero) = self.estaPago() and destino.puedePasar(mensajero)
+  method estaPago() = pago
+  method cambiarEstadoDePago() {
+    pago = !pago
+  }
+  method cambiarDestino(destinoDado) {
+    destino = destinoDado
+  }
+}
+
+
+
+
+
+//personajes
 object roberto {
-  var transporte = null 
-  const peso = 90
-  method pesoTotal() = peso + transporte
+  var transporte = bicicleta 
+  method pesoTotal() = 90 + transporte.peso()
   method transporte(vehiculo) {
     transporte = vehiculo
   }
@@ -11,22 +28,22 @@ object roberto {
 }
 
 object chuckNorris {
-  const peso = 80
   method puedeLlamar() {
   return true 
 } 
-  method pesoTotal() = peso     
+  method pesoTotal() = 80     
 }
 
 object neo {
-  const peso = 0
   var credito = true 
-  method pesoTotal()= peso
+  method pesoTotal()= 0
   method cambiarCredito(){
     credito = !credito
   }
   method puedeLlamar()= credito  
   } 
+
+//lugares
 
 object puenteDeBrooklyn {
   method puedePasar(mensajero) { 
@@ -55,3 +72,4 @@ object camion {
     cantidadDeAcoplados = unaCantidad
   }
 }
+
